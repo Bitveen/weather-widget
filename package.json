@@ -1,0 +1,17 @@
+{
+  "name": "weatherWidget",
+  "version": "1.0.0",
+  "description": "Simple weather widget",
+  "main": "server.js",
+  "scripts": {},
+  "keywords": ["js", "node.js", "redis"],
+  "author": "Bitveen",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6",
+    "redis": "^2.6.3",
+    "request": "^2.79.0"
+  }
+}
