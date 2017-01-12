@@ -5,7 +5,11 @@ const api = require('./api');
 
 
 
-router.get('/', (req, res) => {
+router.get('/widgets', (req, res) => {
+    res.render('index');
+});
+
+router.get('/widgets/create', (req, res) => {
     res.render('create');
 });
 

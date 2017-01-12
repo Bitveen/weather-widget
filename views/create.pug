@@ -1,4 +1,36 @@
 extends layout.pug
 
 block content
-    h1 Hello world!
+    div(class='container')
+        div(class='page-header')
+            h1 Создание виджета
+        form(class='form-horizontal' id='widget-form')
+            div(class='form-group')
+                label(class='col-lg-6 control-label') Выберите город:
+                div(class='col-lg-6') 
+                    select(class='form-control', name='city')
+                        option(value='Moscow', checked) Москва
+                        option(value='Saint-Petersburg') Санкт-Петербург
+                        option(value='Nizhny Novgorod') Нижний Новгород
+            
+            div(class='form-group')
+                label(class='col-lg-6 control-label') На сколько дней выдавать прогноз:
+                div(class='col-lg-6') 
+                    select(class='form-control', name='days')
+                        option(value='1', checked) 1
+                        option(value='3') 3
+                        option(value='7') 7
+            
+            div(class='radio col-lg-offset-7')
+                label 
+                    input(type='radio', name='type', value='vertical', checked)
+                    | Вертикальное расположение
+            div(class='radio col-lg-offset-7')
+                label
+                    input(type='radio', name='type', value='horizontal') 
+                    | Горизонтальное расположение
+
+            hr
+            button(type='submit', class='btn btn-primary') Получить код
+            hr
+            div(id='code-result' class='well hidden')
