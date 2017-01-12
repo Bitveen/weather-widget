@@ -21,9 +21,12 @@ var WidgetCreator = (function() {
         });
         var apiPath = '/api/code?city=' + selectedCity + '&days=' + selectedDays + '&type=' + selectedType;
         fetchTemplate(apiPath, function(template) {
-            var codeResultDiv = document.getElementById('code-result');
-            codeResultDiv.classList.remove('hidden');
-            codeResultDiv.innerText = template;
+
+            console.log(JSON.parse(template));
+
+            // var codeResultDiv = document.getElementById('code-result');
+            // codeResultDiv.classList.remove('hidden');
+            // codeResultDiv.innerText = template;
         });
     }
 
