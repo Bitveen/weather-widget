@@ -25,8 +25,6 @@ router.get('/logout', (req, res) => {
 });
 
 
-
-
 router.get('/register', (req, res) => {
     res.render('register');
 });
@@ -42,10 +40,6 @@ router.post('/register', (req, res) => {
         });
     });
 
-});
-
-router.get('/test', (req, res) => {
-    res.render('test');
 });
 
 
