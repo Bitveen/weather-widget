@@ -44,6 +44,10 @@ router.post('/register', (req, res) => {
 
 });
 
+router.get('/test', (req, res) => {
+    res.render('test');
+});
+
 
 router.use(widgets);
 

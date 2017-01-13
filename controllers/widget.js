@@ -38,6 +38,20 @@ module.exports = {
         // or if it's not an actual weather make an api call
         // and save it to database
         // and response back
+        let { callback } = req.query;
+        let { widgetId } = req.params;
+
+        let weather = [
+            {
+                date: "12.01.2017",
+                temp: -3
+            }
+        ];
+
+        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+        res.send(callback + '(' + JSON.stringify(weather) + ')');
+
+
     },
 
     // form create new widget
@@ -56,15 +70,16 @@ module.exports = {
     // create widget
     store(req, res) {
         let {city, days, layout} = req.query;
-        let compiledTemplate = pug.compileFile(req.app.get('views') + '/code.pug');
-        User.findOneAndUpdate({ login: req.user.login }, { '$addToSet': { widgets: { city, days, layout } }}, {new: true}, (err, updatedUser) => {
+        let compiledTemplate = pug.compileFile(req.app.get('views') + `/widgets/${layout}${days}.pug`);
+
+
+
+        User.findOneAndUpdate({ login: req.user.login }, { '$addToSet': { widgets: { city, days, layout } }}, { new: true }, (err, updatedUser) => {
             if (err) {
                 return res.redirect('/widget/create');
             }
             res.send(compiledTemplate({
                 id: updatedUser.widgets[updatedUser.widgets.length - 1].id,
-                days: days,
-                layout: layout,
                 city: localizeCityName(city)
             }));
         });

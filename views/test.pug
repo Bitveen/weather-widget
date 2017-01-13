@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+    <script defer src="http://localhost:8080/widget/587915218ee26b32bcfb2dca?callback=fillInWidget" id='weather-script'></script>
+    script.
+        function fillInWidget(data) {
+            console.log(data);
+        }

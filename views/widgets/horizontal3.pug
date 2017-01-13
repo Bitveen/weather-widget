@@ -1,0 +1,10 @@
+div(class='weather-widget')
+    script(src='http://localhost:8080/widget/' + id + '?callback=fillInWidget')
+    include includes/widgetStyle.pug
+    div(class='weather-widget__header')
+        h3=city
+    div(class='weather-widget__body')
+        div(class='weather-widget__row')
+            div(class='weather-widget__day')
+            div(class='weather-widget__day')
+            div(class='weather-widget__day')
