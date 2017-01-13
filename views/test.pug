@@ -1,8 +1,8 @@
 extends layout.pug
 
 block content
-    <script defer src="http://localhost:8080/widget/587915218ee26b32bcfb2dca?callback=fillInWidget" id='weather-script'></script>
+    <script defer src="http://localhost:8080/widget/58793d277def65372071cb18?callback=fillInWidget" id='weather-script'></script>
     script.
         function fillInWidget(data) {
-            console.log(data);
+            console.log(JSON.parse(data));
         }

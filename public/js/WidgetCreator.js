@@ -27,8 +27,9 @@ var WidgetCreator = (function() {
         var apiPath = '/widget?city=' + selectedCity + '&days=' + selectedDays + '&layout=' + selectedLayout;
 
         fetchTemplate(apiPath, function(template) {
+            console.log(JSON.parse(template));
             hideWidgetForm();
-            codeResult.querySelector('.well').innerText = template;
+            //codeResult.querySelector('.well').innerText = template;
         });
 
     }

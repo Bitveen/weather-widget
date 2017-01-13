@@ -8,15 +8,7 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
-    password: String,
-    widgets: [
-        {
-            title: String,
-            city: String,
-            days: Number,
-            layout: String
-        }
-    ]
+    password: String
 });
 
 
