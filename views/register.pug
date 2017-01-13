@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+    div(class='container content')
+        div(class='panel panel-default')
+            div(class='panel-heading') Регистрация нового пользователя
+            div(class='panel-body')
+                form(method='POST', action='/register')
+                    div(class='form-group')
+                        label(for='login') Логин:
+                        input(type='text', name='login', class='form-control' id='login', placeholder='Введите логин')
+                    div(class='form-group')
+                        label(for='password') Пароль:
+                        input(type='password', name='password', class='form-control' id='password', placeholder='Введите пароль')
+                    button(type='submit', class='btn btn-primary') Зарегистрироваться
+                    span(class='pull-right') Уже зарегистрированы?
+                        a(href='/login', class='btn btn-link') Войти
