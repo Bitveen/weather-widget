@@ -1,20 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const api = require('./api');
 const User = require('../models/user');
 const passport = require('passport');
-const requireAuth = require('../middlewares/auth');
-
-
-router.use((req, res, next) => {
-    res.locals.path = req.path;
-    next();
-});
-
-
-router.get('/', requireAuth, (req, res) => {
-    res.render('index', { user: req.user });
-});
+const widgets = require('./widgets');
 
 router.get('/login', (req, res) => {
     if (req.isAuthenticated()) {
@@ -57,21 +45,7 @@ router.post('/register', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-
-router.get('/widget/create', (req, res) => {
-    res.render('create');
-});
-
-
-
-router.use('/api', api);
+router.use(widgets);
 
 
 module.exports = router;

@@ -22,14 +22,18 @@ block content
 
         div(class='radio col-lg-offset-7')
             label
-                input(type='radio', name='type', value='vertical', checked)
+                input(type='radio', name='layout', value='vertical', checked)
                 | Вертикальное расположение
         div(class='radio col-lg-offset-7')
             label
-                input(type='radio', name='type', value='horizontal')
+                input(type='radio', name='layout', value='horizontal')
                 | Горизонтальное расположение
 
         hr
-        button(type='submit', class='btn btn-primary') Получить код
-        hr
-        div(id='code-result' class='well hidden')
+        button(type='submit', class='btn btn-primary') Создать
+    div(id='code-result' class='hidden')
+        h3 Виджет успешно создан. Вставьте этот код себе на страницу.
+            a(href='#', class='btn btn-link', id='create-widget-btn') Создать еще один виджет.
+        div(class='well')
+block scripts
+    script(src='/js/WidgetCreator.js')

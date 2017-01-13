@@ -8,15 +8,8 @@ const redis = require('redis');
 const redisClient = redis.createClient();
 
 
-let data = [];
 
-
-
-router.get('/code', (req, res) => {
-    let {city, days, type} = req.query;
-    //console.log(req.hostname);
-    let compiledTemplate = pug.compileFile(req.app.get('views') + '/code.pug');
-
+router.post('/code', (req, res) => {
     
 
 
@@ -32,11 +25,6 @@ router.get('/code', (req, res) => {
     //         res.status(200).send(template);
     //     }
     // });
-});
-
-
-request.get('/widget', (req, res) => {
-
 });
 
 
